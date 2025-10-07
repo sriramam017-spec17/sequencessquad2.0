@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #ffcc00);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ff00cc; }
+  50% { text-shadow: 0 0 30px #3333ff; }
+  100% { text-shadow: 0 0 50px #ffcc00; }
+}
+
+.resources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.scheduler {
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.scheduler select, .scheduler input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.scheduler button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.scheduler button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #33ffcc, #ff33aa);
+}
+
+/* --- SUCCESS PAGE --- */
+.success-container {
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.checkmark-circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: inline-block;
+}
+
+.checkmark {
+  width: 120px;
+  height: 120px;
+  stroke-width: 2;
+  stroke: #fff;
+  fill: none;
+  stroke-miterlimit: 10;
+  animation: scaleUp 0.4s ease-in-out both;
+}
+
+.checkmark-circle-bg {
+  stroke: #00ffcc;
+  stroke-width: 3;
+  animation: circleDraw 1s ease-out forwards;
+}
+
+.checkmark-check {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkDraw 0.8s ease-out forwards 0.6s;
+}
+
+@keyframes circleDraw {
+  0% { stroke-dasharray: 0 157; }
+  100% { stroke-dasharray: 157 0; }
+}
+@keyframes checkDraw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes scaleUp {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.success-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 20px;
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px #ff00cc; }
+  50% { text-shadow: 0 0 30px #33ffcc; }
+  100% { text-shadow: 0 0 50px #0077ff; }
+}
+
+.back-btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.back-btn:hover {
+  transform: scale(1.1);
+}
